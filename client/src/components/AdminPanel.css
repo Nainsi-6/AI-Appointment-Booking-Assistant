@@ -1,0 +1,332 @@
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(25, 25, 40, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, rgba(95, 199, 249, 0.1) 0%, rgba(155, 93, 229, 0.1) 100%);
+}
+
+.admin-header h2 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+  background: linear-gradient(135deg, #5fc7f9 0%, #9b5de5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.refresh-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #5fc7f9 0%, #9b5de5 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(95, 199, 249, 0.3);
+}
+
+.refresh-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(95, 199, 249, 0.4);
+}
+
+.refresh-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  padding: 14px 28px;
+  border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+  border-left: 3px solid #ef4444;
+  font-size: 13px;
+}
+
+.admin-controls {
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background: rgba(255, 255, 255, 0.01);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #e4e6eb;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.filter-group select {
+  padding: 10px 14px;
+  border: 1px solid rgba(95, 199, 249, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #e4e6eb;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #5fc7f9;
+  background: rgba(95, 199, 249, 0.05);
+  box-shadow: 0 0 0 3px rgba(95, 199, 249, 0.1);
+}
+
+.filter-group select option {
+  background: #1a1a2e;
+  color: #e4e6eb;
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+}
+
+.stat-card {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(95, 199, 249, 0.1) 0%, rgba(155, 93, 229, 0.1) 100%);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(95, 199, 249, 0.2);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.stat-card:hover {
+  border-color: rgba(95, 199, 249, 0.4);
+  background: linear-gradient(135deg, rgba(95, 199, 249, 0.15) 0%, rgba(155, 93, 229, 0.15) 100%);
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #5fc7f9 0%, #9b5de5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #a0a0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.appointments-table-container {
+  overflow-x: auto;
+  padding: 28px;
+  min-height: 200px;
+}
+
+.appointments-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.appointments-table-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.appointments-table-container::-webkit-scrollbar-thumb {
+  background: rgba(95, 199, 249, 0.3);
+  border-radius: 4px;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.appointments-table thead {
+  background: rgba(95, 199, 249, 0.05);
+  border-bottom: 2px solid rgba(95, 199, 249, 0.3);
+}
+
+.appointments-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 700;
+  color: #5fc7f9;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.appointments-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 13px;
+  color: #e4e6eb;
+}
+
+.appointments-table tbody tr:hover {
+  background: rgba(95, 199, 249, 0.05);
+}
+
+.cell-name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.cell-small {
+  font-size: 12px;
+  color: #a0a0b0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-confirmed {
+  background: rgba(74, 222, 128, 0.15);
+  color: #86efac;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.status-pending {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 40px;
+  color: #a0a0b0;
+  font-size: 16px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 40px;
+  color: #a0a0b0;
+}
+
+.empty-state p {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #e4e6eb;
+  font-weight: 500;
+}
+
+.empty-state small {
+  font-size: 13px;
+  color: #7a7a8a;
+}
+
+.admin-footer {
+  padding: 16px 28px;
+  background: rgba(255, 255, 255, 0.01);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  color: #7a7a8a;
+  font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  .admin-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .appointments-table {
+    font-size: 12px;
+  }
+
+  .appointments-table th,
+  .appointments-table td {
+    padding: 10px 12px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .admin-header h2 {
+    font-size: 20px;
+  }
+
+  .refresh-btn {
+    width: 100%;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .stat-number {
+    font-size: 24px;
+  }
+}
