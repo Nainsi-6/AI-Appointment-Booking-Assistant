@@ -204,6 +204,28 @@ Format:
 | **AI Model** | Groq (llama3-8b) | 0.3.0 | Fast inference, free tier, structured output |
 | **HTTP Client** | Axios | 1.6.0 | Promise-based, interceptor support |
 
+## 🤖 AI Usage & Model Details
+
+### AI Tools Used
+- Groq API (LLM inference for production)
+- ChatGPT (for prompt design, debugging, and refining edge cases)
+- v0.dev (for minor UI inspiration and layout improvements)
+
+### Model Used
+- llama-3.1-8b-instant (via Groq)
+
+### Why This Model?
+- Fast and low-latency responses (important for chat UX)
+- Reliable for structured JSON extraction
+- Cost-efficient for real-time applications
+
+### Prompt Strategy
+- Designed a strict system prompt to enforce JSON-only output
+- Used low temperature (0.2) to ensure consistency
+- Handled missing values using `null`
+- Parsed responses safely using regex before JSON parsing
+
+
 ### Project Structure
 
 ```
